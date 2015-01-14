@@ -94,7 +94,7 @@ a:focus {
 .navbar-custom ul.nav li a {
 	font-size: 12px;
 	letter-spacing: 1px;
-    color: #444;
+    color: #fff;
 	text-transform: uppercase;
 	font-weight: 700;
 }
@@ -324,7 +324,7 @@ hr {
 .intro .slogan {
 	text-align: center;
   height: 85%;
-  padding-top: 15%;
+  padding-top: 18%;
 
 }
 
@@ -365,6 +365,17 @@ hr {
 .intro .slogan h4 {
 	color: #fff;
 	text-shadow: -1px 1px 1px #000;
+}
+
+.intro .slogan p {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.intro .slogan .page-scroll{
+  padding: 18px;
 }
 
 .intro .img-vertical-align {
@@ -738,7 +749,7 @@ Parallax
 }
 
 .btn-huge {
-    padding: 25px;
+    padding: 20px;
     font-size: 26px;
     color: #9C3042;
     background-color: #fff;
