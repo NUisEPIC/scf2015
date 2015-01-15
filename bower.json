@@ -1,9 +1,33 @@
 {
+<<<<<<< HEAD
   "name": "scf2015",
   "private": true,
   "dependencies": {
     "jquery": "~2.1.1",
     "bootstrap": "~3.3.1",
     "font-awesome": "~4.2.0"
+=======
+  "name": "Startup-Career-Fair-2015",
+  "version": "0.0.0",
+  "homepage": "https://github.com/NUisEPIC/scf2015",
+  "authors": [
+    "Jordan Timmerman <skorlir@gmail.com>",
+    "Diane Liu <dianeliu2017@u.northwestern.edu>"
+  ],
+  "description": "Website for Northwestern EPIC Startup Career Fair 20154",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "font-awesome": "~4.2.0",
+    "animate.css": "~3.2.0"
+>>>>>>> origin/master
   }
 }
