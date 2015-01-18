@@ -5,6 +5,7 @@
 /* ==== Google font ==== */
 @import url('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic|Montserrat:700|Merriweather:400italic');
 
+$epic-red: #9C3042;
 
 body {
     width: 100%;
@@ -307,7 +308,6 @@ hr {
 .intro {
 	width:100%;
 	position:relative;
-	
 	background: url(../images/bg_wildhacks_2.png) no-repeat top center;
 }
 
@@ -316,10 +316,9 @@ hr {
 }
 
 .intro .slogan {
-	text-align: center;
-  height: 85%;
-  padding-top: 18%;
-
+    text-align: center;
+    height: 85%;
+    padding-top: 18%;   
 }
 
 .intro .page-scroll {
@@ -467,9 +466,24 @@ hr {
 --- Sign Up
 ============================ */
 
-.service-icon {
-  margin-bottom: 20px;
-} 
+
+/* ===========================
+--- FAQ
+============================ */
+.faq-questions{
+    h3, h4{
+        margin-bottom: 10px;
+        text-transform: none;
+        font-family: 'Lato',sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: $epic-red;
+    }
+    p{
+        line-height: normal;
+    }
+}
+
 
 /* ===========================
 --- Contact
