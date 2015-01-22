@@ -42,7 +42,7 @@ app.factory('form-submitter', ['$http', function($http) {
     },
     _log: {
       _log_fn: function(mode, txt) {
-        !root.debug[mode] || console[mode](txt);
+        !root.config.debug[mode] || console[mode](txt);
       },
       error: function(txt) { root._log._log_fn('error', txt); },
       warn: function(txt) { root._log._log_fn('warn', txt); },
