@@ -9,7 +9,7 @@ app.factory('form-submitter', ['$http', function($http) {
       var result = [];
       
       angular.forEach(data, function(value, key) {
-        if(!!value) result.push(key + '=' + encodeURIComponent(value));
+        result.push(key + '=' + encodeURIComponent(value));
       });
       
       return result.join('&');
