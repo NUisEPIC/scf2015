@@ -116,7 +116,7 @@ app.factory('form-submitter', ['$http', function($http) {
       // post to appropriate URL
       if (!!root.postURLs[to]) {
         root.postURLs[to].noPreflight 
-          ? root.noPreflightPost(root.postURLs[to], root.transforms[to].result)
+          ? noPreflightPost(root.postURLs[to], root.transforms[to].result)
           : $http.post(root.postURLs[to], root.transforms[to].result);
       } else {
         root._log.error('form-submitter.submit() fail: no valid URL for ' + to + '.');
