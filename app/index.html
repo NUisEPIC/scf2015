@@ -222,7 +222,7 @@
             </div>
           </div>
             <div class="signup-form">
-            <form ng-app="portal-signup" ng-controller="portal-signup-controller" ng-init="registration = {}" role="form">
+            <form ng-app="portal-signup" ng-controller="form-controller" ng-init="registration = {}" role="form">
                       <div class="input-group name">
                         <input type="text" placeholder="First Name" ng-model="registration.name.first"> 
                         <input type="text" placeholder="Last Name" ng-model="registration.name.last"> 
@@ -291,7 +291,7 @@
                         <input type="text" class="form-control" disabled ng-model="uploadedFilename">
                       </div>
                       <div class="input-group" ng-show="formValid()" class="ng-hide">
-                        <button class="btn btn-success btn-block">Submit</button>
+                        <button class="btn btn-success btn-block" ng-click="submitForm()">Submit</button>
                       </div>
                     </form>
             </div>
@@ -398,6 +398,8 @@
 
       <!-- build:js scripts/angular/all.js -->
       <script src="scripts/angular/portal-signup.js"></script>
+      <script src="scripts/angular/factories/form-submitter.js"></script>
+      <script src="scripts/angular/controllers/signup-form.js"></script>
       <!-- endbuild -->
 
       </body>
