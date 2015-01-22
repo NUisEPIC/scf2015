@@ -103,6 +103,11 @@ app.factory('form-submitter', ['$http', function($http) {
       },
       google: function(formObj) {
         root.transform.default(formObj, 'google');
+      },
+      custom: function(formObj) {
+        // NOTE: by default, don't transform custom
+        if (!root.transforms['custom']) root.transforms.custom = {};
+        root.transforms.custom.result = formObj;
       }
     },
     submit: function(to, form) {
@@ -116,8 +121,8 @@ app.factory('form-submitter', ['$http', function($http) {
       // post to appropriate URL
       if (!!root.postURLs[to]) {
         root.postURLs[to].noPreflight 
-          ? noPreflightPost(root.postURLs[to], root.transforms[to].result)
-          : $http.post(root.postURLs[to], root.transforms[to].result);
+          ? noPreflightPost(root.postURLs[to].url, root.transforms[to].result)
+          : $.post(root.postURLs[to].url, root.transforms[to].result);
       } else {
         root._log.error('form-submitter.submit() fail: no valid URL for ' + to + '.');
       }
