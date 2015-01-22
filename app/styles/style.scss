@@ -38,6 +38,10 @@ footer {
   color: $epic-red;
 }
 
+.padding-box {
+   padding: 25px;
+}
+
 form {
   font-size: 20px;
   
@@ -199,4 +203,22 @@ form {
     float: left;
     text-align: center;
   }
+}
+
+
+/* --- Custom Column Widths --- */
+.col-1-5{ //used for 6 logos - 3 on each side
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+  width: 15.27777777777778%;
+}
+
+.col-8-logos{
+    position: relative;
+    padding-left: 5px;
+    padding-right: 5px;
+    float: left;
+    width: 11.4583333333333333333%;
 }
