@@ -110,7 +110,7 @@ app.factory('form-submitter', ['$http', function($http) {
         root.transforms.custom.result = formObj;
       }
     },
-    submit: function(to, form) {
+    submit: function(to, form, sucessCallback, failCallback) {
       // transform
       if(!!root.transform[to]) {
         root.transform[to](form);
@@ -122,7 +122,9 @@ app.factory('form-submitter', ['$http', function($http) {
       if (!!root.postURLs[to]) {
         root.postURLs[to].noPreflight 
           ? noPreflightPost(root.postURLs[to].url, root.transforms[to].result)
-          : $.post(root.postURLs[to].url, root.transforms[to].result);
+          : $.post(root.postURLs[to].url, root.transforms[to].result)
+            .success(successCallback)
+            .error(failCallback);
       } else {
         root._log.error('form-submitter.submit() fail: no valid URL for ' + to + '.');
       }
