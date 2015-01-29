@@ -23,9 +23,14 @@ app.controller('form-controller',
   formSubmitter.setTransformMap('google', googleFormMap);
   formSubmitter.setPostURL('google', 'https://docs.google.com/a/u.northwestern.edu/forms/d/1X8qXL0fSRd5mhaiF2Bg0iLZpL7Hn0QVwtf1sELLh_fs/formResponse');
   formSubmitter.setPostURL('custom', 'http://formula-one.herokuapp.com/scf/application');
-
+  $scope.processing = false;
+  $scope.success = false; 
   $scope.submitForm = function() {
-    formSubmitter.submitAll($scope.registration);
+    var success = function() {
+      $scope.processing = false;
+      $scope.success = true;
+    }
+    formSubmitter.submitAll($scope.registration, success, console.log("EPIC failure"));
   }
   
   // -- filepicker setup
