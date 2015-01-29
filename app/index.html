@@ -290,7 +290,7 @@
                         </span>
                         <input type="text" class="form-control" disabled ng-model="uploadedFilename">
                       </div>
-                      <div class="input-group" ng-show="formValid()" class="ng-hide">
+                      <div class="input-group" ng-show="formValid()" ng-disabled = "processing | success" class="ng-hide">
                         <button class="btn btn-success btn-block" ng-click="submitForm()">Submit</button>
                       </div>
                     </form>
@@ -381,10 +381,9 @@
       <!-- build:js scripts/vendor.js -->
       <!-- bower:js -->
       <script src="../bower_components/jquery/dist/jquery.js"></script>
+      <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
       <script src="../bower_components/angular/angular.js"></script>
-      <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-      <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-      <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+      <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
       <script src="../bower_components/filepicker/filepicker.min.js"></script>
       <!-- endbower -->
       <!-- endbuild -->
