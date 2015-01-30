@@ -110,7 +110,7 @@ app.factory('form-submitter', ['$http', function($http) {
         root.transforms.custom.result = formObj;
       }
     },
-    submit: function(to, form, sucessCallback, failCallback) {
+    submit: function(to, form, successCallback, failCallback) {
       // transform
       if(!!root.transform[to]) {
         root.transform[to](form);
