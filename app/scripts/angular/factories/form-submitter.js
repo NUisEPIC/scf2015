@@ -129,9 +129,16 @@ app.factory('form-submitter', ['$http', function($http) {
         root._log.error('form-submitter.submit() fail: no valid URL for ' + to + '.');
       }
     },
-    submitAll: function(form) {
+    submitAll: function(form, success, fail) {
       Object.keys(root.postURLs).forEach(function(url) {
-        root.submit(url, form);
+        if (success && fail)
+          root.submit(url, form, success, fail);
+        else if (success)
+          root.submit(url, form, success);
+        else if (fail)
+          root.submit(url, form, function(){}, fail);
+        else
+          root.submit(url, form);
       });
     }
   };
