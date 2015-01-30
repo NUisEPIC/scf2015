@@ -93,7 +93,7 @@ app.controller('form-controller',
                && r.email.indexOf('northwestern.edu') > 0)
            && (r.school
                && (r.school == 'mccormick'
-                   || r.school == 'weinburg'
+                   || r.school == 'weinberg'
                    || r.school == 'sesp'
                    || r.school == 'medill'
                    || r.school == 'bienen'
