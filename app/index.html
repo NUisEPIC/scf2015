@@ -290,8 +290,8 @@
                         </span>
                         <input type="text" class="form-control" disabled ng-model="uploadedFilename">
                       </div>
-                      <div class="input-group" ng-show="formValid()" ng-disabled = "processing || success" class="ng-hide">
-                        <button class="btn btn-success btn-block" ng-click="submitForm()">Submit</button>
+                      <div class="input-group" ng-show="formValid()" class="ng-hide">
+                        <button class="btn btn-success btn-block" ng-click="submitForm()" ng-disabled="processing || success">Submit</button>
                       </div>
                     </form>
             </div>

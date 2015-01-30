@@ -32,6 +32,7 @@ app.controller('form-controller',
       $scope.processing = false;
       $scope.success = true;
     }
+    $scope.processing = true;
     formSubmitter.submitAll($scope.registration, success, console.log("EPIC failure"));
   }
 
