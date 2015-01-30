@@ -118,6 +118,6 @@ gulp.task('build', [/*'jshint',*/'html', 'images', 'fonts', 'extras'], function 
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
-gulp.task('default', ['clean', 'serve'], function () {
+gulp.task('default', ['clean'], function () {
   gulp.start('build');
 });
