@@ -62,7 +62,8 @@ app.factory('form-submitter', ['$http', function($http) {
     postURLs: {
       google: {
         noPreflight: true,
-        url: ''
+        url: '',
+        givesBadErrorMessages: true
       }
     },
     setPostURL: function(name, url, noPreflight) {
