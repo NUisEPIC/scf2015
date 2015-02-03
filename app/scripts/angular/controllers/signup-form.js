@@ -2,8 +2,6 @@ app.controller('form-controller',
 ['$scope', 'form-submitter', function($scope, formSubmitter) {
 
   // -- formSubmitter setup
-  formSubmitter.config.debug.warnings = false;
-
   var googleFormMap =
       {
         'name-first':         'entry_639294980',
@@ -33,7 +31,13 @@ app.controller('form-controller',
       $scope.success = true;
     }
     $scope.processing = true;
-    formSubmitter.submitAll($scope.registration, success, console.log("EPIC failure"));
+    formSubmitter.submitAll($scope.registration,
+                            success,
+                            function(d, status, headers, config) { 
+      if (!formSubmitter._squashed) {
+        console.log('Probable failure.');
+      }
+    });
   }
 
   // -- filepicker setup

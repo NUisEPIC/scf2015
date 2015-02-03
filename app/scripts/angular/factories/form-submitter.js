@@ -36,10 +36,11 @@ app.factory('form-submitter', ['$http', function($http) {
       },
       debug: {
         errors: true,
-        warnings: true,
+        warn: true,
         info: false
       }
     },
+    _squashed: false,
     _log: {
       _log_fn: function(mode, txt) {
         !root.config.debug[mode] || console[mode](txt);
