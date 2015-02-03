@@ -112,6 +112,16 @@ app.factory('form-submitter', ['$http', function($http) {
         root.transforms.custom.result = formObj;
       }
     },
+    _wrap_fail_callback: function(cb, to) {
+      if(root.postURLs[to].givesBadErrorMessages) {
+        return function() {
+          root._log.warn("form-submitter warn: Error message(s) probably false; service \"" + to + "\" gives bad CORs responses.");
+          root._squashed = true; // report error maybe should be squashed
+          return typeof(cb) == 'function' ? cb.apply(arguments) : null;
+        }
+      }
+      return cb;
+    },
     submit: function(to, form, successCallback, failCallback) {
       // transform
       if(!!root.transform[to]) {
@@ -120,13 +130,15 @@ app.factory('form-submitter', ['$http', function($http) {
         root._log.warn('form-submitter.transform.' + to + '() warn: transformer does not exist.'
                        + ' Request will send, but data keys may be incorrect.');
       }
+      // set _squashed to false
+      root._squashed = false;
       // post to appropriate URL
       if (!!root.postURLs[to]) {
-        root.postURLs[to].noPreflight 
+        return (root.postURLs[to].noPreflight 
           ? noPreflightPost(root.postURLs[to].url, root.transforms[to].result)
-          : $.post(root.postURLs[to].url, root.transforms[to].result)
-            .success(successCallback)
-            .error(failCallback);
+          : $http.post(root.postURLs[to].url, root.transforms[to].result))
+          .success(successCallback)
+          .error(root._wrap_fail_callback(failCallback, to));
       } else {
         root._log.error('form-submitter.submit() fail: no valid URL for ' + to + '.');
       }
