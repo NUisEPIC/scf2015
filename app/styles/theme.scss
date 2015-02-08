@@ -308,7 +308,8 @@ hr {
 .intro {
 	width:100%;
 	position:relative;
-	background: url(../images/bg_wildhacks_2.png) no-repeat top center;
+	background: url(../images/bg_scf2.png) no-repeat fixed center;
+    background-size: cover;
 }
 
 #intro.intro {
