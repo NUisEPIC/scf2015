@@ -59,23 +59,12 @@ app.controller('form-controller',
                  , 'CLOUDDRIVE'],
       //debug: true
     },
-                    function(InkBlob) {
+    function(InkBlob) {
       $scope.$apply(function() {
         // update $scope inside $apply
         $scope.uploadedFilename = InkBlob.filename;
         $scope.registration.resume = InkBlob;
       });
-      /*filepicker.read(InkBlob,
-         function(data) {
-        // TODO: save resume to S3 Bucket
-        // could do:
-        //$http.put(<s3-url>, data);
-
-      }, function(PFError) {
-        console.log(PFError);
-      }, function(percent) {
-        console.log(percent + " done reading resume file...");
-      });*/
     },
     function(PFError) {
       console.log(PFError.toString());

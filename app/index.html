@@ -224,8 +224,8 @@
           <div class="signup-form">
             <form ng-app="portal-signup" ng-controller="form-controller" ng-init="registration = {}" role="form">
               <div class="input-group name">
-                <input type="text" placeholder="First Name" ng-model="registration.name.first"> 
-                <input type="text" placeholder="Last Name" ng-model="registration.name.last"> 
+                <input type="text" placeholder="First Name" ng-model="registration.name.first">
+                <input type="text" placeholder="Last Name" ng-model="registration.name.last">
               </div>
               <div class="input-group">
                 <input type="text" placeholder="Valid Northwestern Email" ng-model="registration.email">
@@ -293,6 +293,9 @@
               <div class="alert alert-success" ng-show="success">
                 <p>Successfully submitted!</p>
               </div>
+              <div class="alert alert-warning" ng-show="!formValid()">
+                <p>You have to fill out the form before the submit button will show! If everything's filled out, double check that all required fields are filled in and your email is a valid Northwestern email address.</p>
+              </div>
               <div class="input-group" ng-show="formValid() && !success" class="ng-hide">
                 <button class="btn btn-success btn-block" ng-click="submitForm()" ng-disabled="processing">Submit</button>
               </div>
@@ -341,7 +344,7 @@
                 <h4> How many startups will be looking for interns vs. full-time hires?</h4>
                 <p>It will most likely be a nearly even split. Some startups will be looking for both.</p>
               </div>
-            </div> 
+            </div>
 
             <div class="row">
               <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
@@ -377,7 +380,7 @@
               </div>
               <p>&copy;Copyright 2014 - Northwestern Startup Career Fair. All rights reserved.</p>
             </div>
-          </div>	
+          </div>
         </div>
       </footer>
 
@@ -391,7 +394,7 @@
       <!-- endbuild -->
 
       <!-- build:js scripts/main.js -->
-      <script src="scripts/jquery.easing.min.js"></script>	
+      <script src="scripts/jquery.easing.min.js"></script>
       <script src="scripts/jquery.scrollTo.js"></script>
       <!-- Custom Theme JavaScript -->
       <script src="scripts/custom.js"></script>
