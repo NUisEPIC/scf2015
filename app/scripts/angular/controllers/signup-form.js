@@ -1,9 +1,7 @@
-app.controller('form-controller', 
+app.controller('form-controller',
 ['$scope', 'form-submitter', function($scope, formSubmitter) {
 
   // -- formSubmitter setup
-  formSubmitter.config.debug.warnings = false;
-
   var googleFormMap =
       {
         'name-first':         'entry_639294980',
@@ -24,10 +22,24 @@ app.controller('form-controller',
   formSubmitter.setPostURL('google', 'https://docs.google.com/a/u.northwestern.edu/forms/d/1X8qXL0fSRd5mhaiF2Bg0iLZpL7Hn0QVwtf1sELLh_fs/formResponse');
   formSubmitter.setPostURL('custom', 'http://formula-one.herokuapp.com/scf/application');
 
+  $scope.processing = false;
+  $scope.success = false;
+
   $scope.submitForm = function() {
-    formSubmitter.submitAll($scope.registration);
+    var success = function() {
+      $scope.processing = false;
+      $scope.success = true;
+    }
+    $scope.processing = true;
+    formSubmitter.submitAll($scope.registration,
+                            success,
+                            function(d, status, headers, config) {
+      if (!formSubmitter._squashed) {
+        console.log('Probable failure.');
+      }
+    });
   }
-  
+
   // -- filepicker setup
   // API key for resume_portal
   filepicker.setKey('AVRqlhXowRme6yNY2qmrdz');
@@ -45,6 +57,7 @@ app.controller('form-controller',
                  , 'DROPBOX', 'GOOGLE_DRIVE'
                  , 'SKYDRIVE', 'EVERNOTE'
                  , 'CLOUDDRIVE'],
+      //debug: true
     },
                     function(InkBlob) {
       $scope.$apply(function() {
@@ -64,11 +77,11 @@ app.controller('form-controller',
         console.log(percent + " done reading resume file...");
       });*/
     },
-                    function(PFError) {
+    function(PFError) {
       console.log(PFError.toString());
     });
   };
-  
+
   // -- form manipulations
   $scope.setGender = function(string) {
     if(string == 'male' || string == 'female') {
@@ -88,7 +101,7 @@ app.controller('form-controller',
                && r.email.indexOf('northwestern.edu') > 0)
            && (r.school
                && (r.school == 'mccormick'
-                   || r.school == 'weinburg'
+                   || r.school == 'weinberg'
                    || r.school == 'sesp'
                    || r.school == 'medill'
                    || r.school == 'bienen'
@@ -109,7 +122,7 @@ app.controller('form-controller',
                || r.seeking.internship)
            && r.major;
   };
-  
+
   $scope.formIsFilledOut = function() {
     var r = $scope.registration;
     return r.name.first
@@ -121,5 +134,5 @@ app.controller('form-controller',
            && r.gender
            && r.major;
   }
-  
+
 }]);

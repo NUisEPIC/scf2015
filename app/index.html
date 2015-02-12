@@ -78,7 +78,7 @@
           <div class="col-8-logos">
             <img src="images/logos/farley.png" class="img-vertical-align img-responsive">
           </div>
-            <div class="col-8-logos">
+          <div class="col-8-logos">
             <img src="images/logos/EPIC-Logo-White.png" class="img-vertical-align img-responsive">
           </div>
 
@@ -99,7 +99,7 @@
           <div class="col-8-logos">
             <img src="images/logos/kellogg_cmc_white.png" class="img-vertical-align img-responsive">
           </div>
-            <div class="col-8-logos">
+          <div class="col-8-logos">
             <img src="images/logos/Kellogg_RGB_white.png" class="img-vertical-align img-responsive">
           </div>
         </div>
@@ -113,10 +113,10 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <div class="section-heading">
-                  <h2>About</h2>
-                  <i class="fa fa-2x fa-angle-down"></i>
-                </div>
+              <div class="section-heading">
+                <h2>About</h2>
+                <i class="fa fa-2x fa-angle-down"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -158,10 +158,10 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-8 col-lg-offset-2">
-                  <div class="section-heading">
-                    <h2>Companies Attending</h2>
-                    <i class="fa fa-2x fa-angle-down"></i>
-                  </div>
+                <div class="section-heading">
+                  <h2>Companies Attending</h2>
+                  <i class="fa fa-2x fa-angle-down"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -216,85 +216,88 @@
           <div class="row">
             <div class="col-lg-2 col-lg-offset-5">
               <hr class="marginbot-50">
-                
-                
-                
+
+
+
             </div>
           </div>
-            <div class="signup-form">
+          <div class="signup-form">
             <form ng-app="portal-signup" ng-controller="form-controller" ng-init="registration = {}" role="form">
-                      <div class="input-group name">
-                        <input type="text" placeholder="First Name" ng-model="registration.name.first"> 
-                        <input type="text" placeholder="Last Name" ng-model="registration.name.last"> 
-                      </div>
-                      <div class="input-group">
-                        <input type="text" placeholder="Valid Northwestern Email" ng-model="registration.email">
-                      </div>
-                      <div class="input-group gender">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-default" ng-click="setGender('male')" ng-class="{'active': registration.gender == 'male'}">
-                            Male
-                          </button>
-                          <button type="button" class="btn btn-default" ng-click="setGender('female')" ng-class="{'active': registration.gender == 'female'}">
-                            Female
-                          </button>
-                        </div>
-                      </div>
-                      <div class="input-group school">
-                        <label>School</label>
-                        <select ng-model="registration.school">
-                          <option value="mccormick">McCormick</option>
-                          <option value="weinburg">Weinburg</option>
-                          <option value="sesp">SESP</option>
-                          <option value="medill">Medill</option>
-                          <option value="bienen">Bienen</option>
-                          <option value="comm">School of Communications</option>
-                          <option value="kellogg">Kellogg</option>
-                          <option value="tgs">The Graduate School</option>
-                        </select>
-                      </div>
-                      <div class="input-group major">
-                        <input type="text" placeholder="Major" ng-model="registration.major">
-                      </div>
-                      <div class="input-group year">
-                        <label>Class Year</label>
-                        <div class="radio-group">
-                          <input type="radio" name="year" value="Freshman" ng-model="registration.year">
-                          <input type="radio" name="year" value="Sophomore" ng-model="registration.year">
-                          <input type="radio" name="year" value="Junior" ng-model="registration.year">
-                        </div>
-                        <div class="radio-group">
-                          <input type="radio" name="year" value="Senior" ng-model="registration.year">
-                          <input type="radio" name="year" value="Graduate Student" ng-model="registration.year">
-                          <input type="radio" name="year" value="Other" ng-model="registration.year">
-                        </div>
-                        <input type="text" name="other" placeholder="Please Elaborate..." class="form-control" ng-model="registration.yearOtherExplanation" ng-show="registration.year == 'Other'">
-                      </div>
-                      <div class="input-group seeking" ng-init="registration.seeking = {'fulltime': false, 'internship': false}">
-                        <label>I am Searching For <small>(choose at least one)</small></label>
-                        <input type="checkbox" ng-model="registration.seeking.fulltime">
-                        <label>Full Time Positions</label>
-                        <input type="checkbox" ng-model="registration.seeking.internship">
-                        <label>Internships</label>
-                      </div>
-                      <div class="input-group international" ng-init="registration.international = false">
-                        <label>International?</label>
-                        <input type="checkbox" ng-model="registration.international">
-                        <label>I am an international student</label>
-                      </div>
-                      <div class="input-group resume">
-                        <span class="input-group-btn">
-                          <button class="btn btn-success" type="button" ng-click="pickFile()">
-                            Upload Resume
-                          </button>
-                        </span>
-                        <input type="text" class="form-control" disabled ng-model="uploadedFilename">
-                      </div>
-                      <div class="input-group" ng-show="formValid()" class="ng-hide">
-                        <button class="btn btn-success btn-block" ng-click="submitForm()">Submit</button>
-                      </div>
-                    </form>
-            </div>
+              <div class="input-group name">
+                <input type="text" placeholder="First Name" ng-model="registration.name.first"> 
+                <input type="text" placeholder="Last Name" ng-model="registration.name.last"> 
+              </div>
+              <div class="input-group">
+                <input type="text" placeholder="Valid Northwestern Email" ng-model="registration.email">
+              </div>
+              <div class="input-group gender">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default" ng-click="setGender('male')" ng-class="{'active': registration.gender == 'male'}">
+                    Male
+                  </button>
+                  <button type="button" class="btn btn-default" ng-click="setGender('female')" ng-class="{'active': registration.gender == 'female'}">
+                    Female
+                  </button>
+                </div>
+              </div>
+              <div class="input-group school">
+                <label>School</label>
+                <select ng-model="registration.school">
+                  <option value="mccormick">McCormick</option>
+                  <option value="weinberg">Weinberg</option>
+                  <option value="sesp">SESP</option>
+                  <option value="medill">Medill</option>
+                  <option value="bienen">Bienen</option>
+                  <option value="comm">School of Communications</option>
+                  <option value="kellogg">Kellogg</option>
+                  <option value="tgs">The Graduate School</option>
+                </select>
+              </div>
+              <div class="input-group major">
+                <input type="text" placeholder="Major" ng-model="registration.major">
+              </div>
+              <div class="input-group year">
+                <label>Class Year</label>
+                <div class="radio-group">
+                  <input type="radio" name="year" value="Freshman" ng-model="registration.year">
+                  <input type="radio" name="year" value="Sophomore" ng-model="registration.year">
+                  <input type="radio" name="year" value="Junior" ng-model="registration.year">
+                </div>
+                <div class="radio-group">
+                  <input type="radio" name="year" value="Senior" ng-model="registration.year">
+                  <input type="radio" name="year" value="Graduate Student" ng-model="registration.year">
+                  <input type="radio" name="year" value="Other" ng-model="registration.year">
+                </div>
+                <input type="text" name="other" placeholder="Please Elaborate..." class="form-control" ng-model="registration.yearOtherExplanation" ng-show="registration.year == 'Other'">
+              </div>
+              <div class="input-group seeking" ng-init="registration.seeking = {'fulltime': false, 'internship': false}">
+                <label>I am Searching For <small>(choose at least one)</small></label>
+                <input type="checkbox" ng-model="registration.seeking.fulltime">
+                <label>Full Time Positions</label>
+                <input type="checkbox" ng-model="registration.seeking.internship">
+                <label>Internships</label>
+              </div>
+              <div class="input-group international" ng-init="registration.international = false">
+                <label>International?</label>
+                <input type="checkbox" ng-model="registration.international">
+                <label>I am an international student</label>
+              </div>
+              <div class="input-group resume">
+                <span class="input-group-btn">
+                  <button class="btn btn-success" type="button" ng-click="pickFile()">
+                    Upload Resume
+                  </button>
+                </span>
+                <input type="text" class="form-control" disabled ng-model="uploadedFilename">
+              </div>
+              <div class="alert alert-success" ng-show="success">
+                <p>Successfully submitted!</p>
+              </div>
+              <div class="input-group" ng-show="formValid() && !success" class="ng-hide">
+                <button class="btn btn-success btn-block" ng-click="submitForm()" ng-disabled="processing">Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
       <!--/Section: Sign Up -->
@@ -322,39 +325,39 @@
               <hr class="marginbot-50">
             </div>
           </div>
-            
-            <div class="faq-questions">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
-                        <h4>Should I bring my resume to the Career Fair?</h4>
-                        <p>Yes. Please bring paper copies of your resume in addition to uploading it during signup.</p>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
-                        <h4>I am a graduate student. Can I still come?</h4>
-                        <p>Yes. We will have a wide variety of employers looking for students with a wide variety of backgrounds.</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
-                        <h4> How many startups will be looking for interns vs. full-time hires?</h4>
-                        <p>It will most likely be a nearly even split. Some startups will be looking for both.</p>
-                    </div>
-                </div> 
+          <div class="faq-questions">
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
+                <h4>Should I bring my resume to the Career Fair?</h4>
+                <p>Yes. Please bring paper copies of your resume in addition to uploading it during signup.</p>
 
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
-                        <h4>Will there be any particular industry concentration, for instance, high-tech, at the Fair?</h4>
-                        <p>No. High-tech will be well-represented, but so will other industries.</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
-                        <h4>How do I know what startups will be attending?</h4>
-                        <p> Startups attending should be listed on this site. We will also provide pamphlets on the day-of the Fair listing the startups and the positions they are seeking to fill.</p>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
-                        <h4>What stage startups will be in attendance?</h4>
-                        <p> Startups of all stages, from seed to already acquired, will be represented at the Fair.</p>
-                    </div>
-                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
+                <h4>I am a graduate student. Can I still come?</h4>
+                <p>Yes. We will have a wide variety of employers looking for students with a wide variety of backgrounds.</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
+                <h4> How many startups will be looking for interns vs. full-time hires?</h4>
+                <p>It will most likely be a nearly even split. Some startups will be looking for both.</p>
+              </div>
+            </div> 
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
+                <h4>Will there be any particular industry concentration, for instance, high-tech, at the Fair?</h4>
+                <p>No. High-tech will be well-represented, but so will other industries.</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
+                <h4>How do I know what startups will be attending?</h4>
+                <p> Startups attending should be listed on this site. We will also provide pamphlets on the day-of the Fair listing the startups and the positions they are seeking to fill.</p>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 padding-box">
+                <h4>What stage startups will be in attendance?</h4>
+                <p> Startups of all stages, from seed to already acquired, will be represented at the Fair.</p>
+              </div>
             </div>
+          </div>
         </div>
       </section>
       <!-- /Section: faq -->
@@ -382,9 +385,7 @@
       <!-- bower:js -->
       <script src="../bower_components/jquery/dist/jquery.js"></script>
       <script src="../bower_components/angular/angular.js"></script>
-      <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-      <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-      <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+      <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
       <script src="../bower_components/filepicker/filepicker.min.js"></script>
       <!-- endbower -->
       <!-- endbuild -->

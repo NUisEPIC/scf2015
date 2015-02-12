@@ -36,10 +36,11 @@ app.factory('form-submitter', ['$http', function($http) {
       },
       debug: {
         errors: true,
-        warnings: true,
+        warn: true,
         info: false
       }
     },
+    _squashed: false,
     _log: {
       _log_fn: function(mode, txt) {
         !root.config.debug[mode] || console[mode](txt);
@@ -60,16 +61,17 @@ app.factory('form-submitter', ['$http', function($http) {
     },
     postURLs: {
       google: {
-        noPreflight: true,
-        url: ''
+        url: '',
+        givesBadErrorMessages: true
       }
     },
-    setPostURL: function(name, url, noPreflight) {
+    setPostURL: function(name, url) {
+      if (typeof(url) == 'object') {
+        root.postURLs[name] = url;
+        return;
+      }
       root.postURLs[name] = root.postURLs[name] || {};
       root.postURLs[name].url = url;
-      // keep default if noPreflight is not being explicitly set
-      if (!!noPreflight)
-        root.postURLs[name].noPreflight = noPreflight;
     },
     transform: {
       fn: {
@@ -110,7 +112,17 @@ app.factory('form-submitter', ['$http', function($http) {
         root.transforms.custom.result = formObj;
       }
     },
-    submit: function(to, form) {
+    _wrap_fail_callback: function(cb, to) {
+      if(root.postURLs[to].givesBadErrorMessages) {
+        return function() {
+          root._log.warn("form-submitter warn: Error message(s) probably false; service \"" + to + "\" gives bad CORs responses.");
+          root._squashed = true; // report error maybe should be squashed
+          return typeof(cb) == 'function' ? cb.apply(arguments) : null;
+        }
+      }
+      return cb;
+    },
+    submit: function(to, form, successCallback, failCallback) {
       // transform
       if(!!root.transform[to]) {
         root.transform[to](form);
@@ -118,18 +130,27 @@ app.factory('form-submitter', ['$http', function($http) {
         root._log.warn('form-submitter.transform.' + to + '() warn: transformer does not exist.'
                        + ' Request will send, but data keys may be incorrect.');
       }
+      // set _squashed to false
+      root._squashed = false;
       // post to appropriate URL
       if (!!root.postURLs[to]) {
-        root.postURLs[to].noPreflight 
+        return (root.postURLs[to].noPreflight 
           ? noPreflightPost(root.postURLs[to].url, root.transforms[to].result)
-          : $.post(root.postURLs[to].url, root.transforms[to].result);
+          : $http.post(root.postURLs[to].url, root.transforms[to].result))
+          .success(successCallback)
+          .error(root._wrap_fail_callback(failCallback, to));
       } else {
         root._log.error('form-submitter.submit() fail: no valid URL for ' + to + '.');
       }
     },
-    submitAll: function(form) {
+    submitAll: function(form, success, fail) {
       Object.keys(root.postURLs).forEach(function(url) {
-        root.submit(url, form);
+        if (success && fail)
+          root.submit(url, form, success, fail);
+        else if (success)
+          root.submit(url, form, success);
+        else
+          root.submit(url, form);
       });
     }
   };
