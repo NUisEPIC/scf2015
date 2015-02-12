@@ -1,4 +1,4 @@
-app.controller('form-controller', 
+app.controller('form-controller',
 ['$scope', 'form-submitter', function($scope, formSubmitter) {
 
   // -- formSubmitter setup
@@ -33,7 +33,7 @@ app.controller('form-controller',
     $scope.processing = true;
     formSubmitter.submitAll($scope.registration,
                             success,
-                            function(d, status, headers, config) { 
+                            function(d, status, headers, config) {
       if (!formSubmitter._squashed) {
         console.log('Probable failure.');
       }
@@ -57,6 +57,7 @@ app.controller('form-controller',
                  , 'DROPBOX', 'GOOGLE_DRIVE'
                  , 'SKYDRIVE', 'EVERNOTE'
                  , 'CLOUDDRIVE'],
+      //debug: true
     },
                     function(InkBlob) {
       $scope.$apply(function() {
@@ -76,11 +77,11 @@ app.controller('form-controller',
         console.log(percent + " done reading resume file...");
       });*/
     },
-                    function(PFError) {
+    function(PFError) {
       console.log(PFError.toString());
     });
   };
-  
+
   // -- form manipulations
   $scope.setGender = function(string) {
     if(string == 'male' || string == 'female') {
@@ -121,7 +122,7 @@ app.controller('form-controller',
                || r.seeking.internship)
            && r.major;
   };
-  
+
   $scope.formIsFilledOut = function() {
     var r = $scope.registration;
     return r.name.first
@@ -133,5 +134,5 @@ app.controller('form-controller',
            && r.gender
            && r.major;
   }
-  
+
 }]);

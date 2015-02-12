@@ -61,17 +61,17 @@ app.factory('form-submitter', ['$http', function($http) {
     },
     postURLs: {
       google: {
-        noPreflight: true,
         url: '',
         givesBadErrorMessages: true
       }
     },
-    setPostURL: function(name, url, noPreflight) {
+    setPostURL: function(name, url) {
+      if (typeof(url) == 'object') {
+        root.postURLs[name] = url;
+        return;
+      }
       root.postURLs[name] = root.postURLs[name] || {};
       root.postURLs[name].url = url;
-      // keep default if noPreflight is not being explicitly set
-      if (!!noPreflight)
-        root.postURLs[name].noPreflight = noPreflight;
     },
     transform: {
       fn: {
@@ -149,8 +149,6 @@ app.factory('form-submitter', ['$http', function($http) {
           root.submit(url, form, success, fail);
         else if (success)
           root.submit(url, form, success);
-        else if (fail)
-          root.submit(url, form, function(){}, fail);
         else
           root.submit(url, form);
       });
