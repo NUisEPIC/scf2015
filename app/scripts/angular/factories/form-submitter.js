@@ -1,20 +1,20 @@
 app.factory('form-submitter', ['$http', function($http) {
 
   function noPreflightPost(url, data) {
-    
+
     function param(data) {
       // NOTE: this parameterizing function is not very robust
       //       it assumes all your k,v pairs will be unnested
       //       and that your keys do not need to be encoded.
       var result = [];
-      
+
       angular.forEach(data, function(value, key) {
         result.push(key + '=' + encodeURIComponent(value));
       });
-      
+
       return result.join('&');
     }
-    
+
     // unset stupid angular defaults
     var noPreflightConfig = {
       headers: {
@@ -62,6 +62,7 @@ app.factory('form-submitter', ['$http', function($http) {
     postURLs: {
       google: {
         url: '',
+        noPreflight: true,
         givesBadErrorMessages: true
       }
     },
@@ -134,7 +135,7 @@ app.factory('form-submitter', ['$http', function($http) {
       root._squashed = false;
       // post to appropriate URL
       if (!!root.postURLs[to]) {
-        return (root.postURLs[to].noPreflight 
+        return (root.postURLs[to].noPreflight
           ? noPreflightPost(root.postURLs[to].url, root.transforms[to].result)
           : $http.post(root.postURLs[to].url, root.transforms[to].result))
           .success(successCallback)
