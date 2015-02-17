@@ -26,7 +26,7 @@ app.controller('form-controller',
   $scope.success = false;
 
   $scope.submitForm = function() {
-    var success = function(resp) {
+    var success = function() {
       $scope.processing = false;
       $scope.success = true;
     }
@@ -36,8 +36,6 @@ app.controller('form-controller',
                             function(d, status, headers, config) {
       if (!formSubmitter._squashed) {
         console.log('Probable failure.');
-      } else {
-        success(); //terrible.
       }
     });
   }
