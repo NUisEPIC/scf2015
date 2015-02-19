@@ -27,8 +27,11 @@ app.controller('form-controller',
 
   $scope.submitForm = function() {
     // fix "other" major
-    if ($scope.registration.major == 'other')
+    if ($scope.registration.major == 'other') {
+      console.log($scope.registration.otherMajor);
+      console.log($scope.registration.major);
       $scope.registration.major = $scope.registration.otherMajor;
+    }
 
     var success = function() {
       $scope.processing = false;
