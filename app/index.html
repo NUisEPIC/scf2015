@@ -191,7 +191,7 @@
           </div>
 
              <div class="row">
-                 
+
             <div class="col-xs-3 col-sm-3 col-md-3 col-md-offset-1-5 padding-box">
               <img src="images/companylogos/OpenMarkets.png" class="img-vertical-align img-responsive">
             </div>
@@ -201,10 +201,10 @@
             <div class="col-xs-3 col-sm-3 col-md-3 padding-box">
               <img src="images/companylogos/SproutSocial.png" class="img-vertical-align img-responsive">
             </div>
-            
+
           </div>
-            
-            
+
+
         </div>
       </section>
       <!-- /Section: companies -->
@@ -268,7 +268,28 @@
                 </select>
               </div>
               <div class="input-group major">
-                <input type="text" placeholder="Major" ng-model="registration.major">
+                <label>Major</label>
+                <select ng-model="registration.major" style="width: 75%; float: right">
+                  <option value="computerScience">Computer Science</option>
+                  <option value="economics">Economics</option>
+                  <option value="journalism">Journalism</option>
+                  <option value="politicalScience">Political Science</option>
+                  <option value="psychology">Psychology</option>
+                  <option value="mathematics">Mathematics</option>
+                  <option value="biologicalScience">Biological Science</option>
+                  <option value="communicationStudies">Communication Studies</option>
+                  <option value="history">History</option>
+                  <option value="internationalStudies">International Studies</option>
+                  <option value="theatre">Theatre</option>
+                  <option value="rtvf">Radio/Television/Film</option>
+                  <option value="industrialEngineering">Industrial Engineering</option>
+                  <option value="biomedialEngineering">Biomedical Engineering</option>
+                  <option value="mechanicalEngineering">Mechanical Engineering</option>
+                  <option value="chemicalEngineering">Chemical Engineering</option>
+                  <option value="mmss">Mathematical Methods in the Social Sciences</option>
+                  <option value="other">Other (Please Specify)</option>
+                </select>
+                <input type="text" placeholder="Specify your Major..." ng-model="registration.otherMajor" ng-show="registration.major == 'other'">
               </div>
               <div class="input-group year">
                 <label>Class Year</label>
