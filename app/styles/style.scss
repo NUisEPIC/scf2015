@@ -242,3 +242,13 @@ form {
         margin-left: 12.5%;
     }
 }
+
+.col-md-offset-2{
+  margin-left: 16.66666666667%;
+}
+
+
+/* --- Custom Company Logo Class --- */
+.companylogo{
+  @extend .padding-box;
+}
