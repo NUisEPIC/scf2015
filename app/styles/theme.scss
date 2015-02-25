@@ -308,6 +308,7 @@ hr {
 .intro {
 	width:100%;
 	position:relative;
+    background-color: $epic-red;
 	background: url(../images/bg_scf2.png) no-repeat fixed center;
     background-size: cover;
 }
@@ -374,9 +375,6 @@ hr {
 
 .intro .img-vertical-align {
   max-height: 75px;
-//  position: relative;
-//  top: 50%;
-//  transform: translateY(-50%);
 }
 
 .intro .logos{
@@ -465,6 +463,13 @@ hr {
 .service-icon {
 	margin-bottom: 20px;
 }	
+
+#companies .img-vertical-align{
+  max-height: 150px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 /* ===========================
 --- Sign Up
