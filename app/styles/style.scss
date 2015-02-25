@@ -1,31 +1,31 @@
 $epic-red: #9C3042;
 
 a,.tp-caption a.btn:hover {
-	color: $epic-red;
+  color: $epic-red;
 }
 .top-nav-collapse {
-	background: $epic-red;
+  background: $epic-red;
 }
 
 .navbar-custom ul.nav ul.dropdown-menu li a:hover {
-	color: $epic-red;
+  color: $epic-red;
 }
 
 .owl-theme .owl-controls .owl-page.active span,
 .owl-theme .owl-controls.clickable .owl-page:hover span {
-    background-color: $epic-red;
+  background-color: $epic-red;
 }
 
 .widget-avatar .avatar:hover {
-    border: 5px solid $epic-red;
+  border: 5px solid $epic-red;
 }
 
 .bg-skin {
-	background: $epic-red;
+  background: $epic-red;
 }
 
 footer {
-    background-color: $epic-red;
+  background-color: $epic-red;
 }
 
 .btn-skin {
@@ -40,17 +40,17 @@ footer {
 
 form {
   font-size: 20px;
-  
+
   .input-group {
     width: 80%;
     margin: 0 auto;
     text-align: left;
     margin-bottom: 20px;
-    
+
     input {
       @extend .form-control;
     }
-    
+
     &.name {
       input[type="text"] {
         width: 49%;
@@ -60,14 +60,14 @@ form {
         }
       }
     }
-    
+
     &.gender .btn-group {
       width: 100%;
       .btn {
         width: 50%;
       }
     }
-    
+
     &.school {
       label {
         width: 80px;
@@ -79,7 +79,7 @@ form {
         width: calc(100% - 105px);
       }
     }
-    
+
     &.year {
       label {
         margin: 0 auto;
@@ -91,7 +91,7 @@ form {
         margin-top: 25px;
       }
     }
-    
+
     &.seeking, &.international {
       label:first-child {
         width: 100%;
@@ -104,7 +104,7 @@ form {
         margin-left: 18%;
       }
     }
-    
+
     &.resume {
       input[type="text"] {
         text-overflow: ellipsis;
@@ -112,7 +112,7 @@ form {
       }
     }
   }
-  
+
   .radio-group {
     display: block;
     width: 40%;
@@ -144,30 +144,30 @@ form {
       width: 80% !important;
       margin-left: 20% !important;
     }
-    
+
     .school {
       margin-left: 10% !important;
     }
-    
+
     .year, .seeking, .international {
       label:first-child {
         margin-left: 4% !important;
       }
     }
   }
-  
+
   @media all and (max-width:500px) {
     .seeking, .international {
       input[type="checkbox"] {
         margin-left: 8% !important;
       }
     }
-    
+
     .radio-group {
       margin-left: 8% !important;
     }
   }
-  
+
   input[type="radio"] {
     margin-right: 15px;
     width: 15px;
@@ -178,7 +178,7 @@ form {
     font-size: 16px;
     font-family: inherit;
   }
-  
+
   input[type="checkbox"] {
     width: 15px;
     height: 15px;
@@ -193,7 +193,7 @@ form {
       float: left;
     }
   }
-  
+
   input[type="text"] {
     font-size: inherit;
     float: left;
@@ -207,9 +207,9 @@ form {
 }
 
 .vertical-center{
-//  position: relative;
-//  top: 50%;
-//  transform: translateY(-50%);
+  //  position: relative;
+  //  top: 50%;
+  //  transform: translateY(-50%);
   display: table-cell;
   vertical-align: middle;
 }
@@ -229,18 +229,18 @@ form {
 }
 
 .col-8-logos{
-    position: relative;
-    padding-left: 5px;
-    padding-right: 5px;
-    float: left;
-    width: 11.4583333333333333333%;
+  position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
+  float: left;
+  width: 11.4583333333333333333%;
 }
 
 //used for offsetting three company logos
 @media (min-width: 992px) {
-    .col-md-offset-1-5{
-        margin-left: 12.5%;
-    }
+  .col-md-offset-1-5{
+    margin-left: 12.5%;
+  }
 }
 
 .col-md-offset-2{
@@ -251,4 +251,13 @@ form {
 /* --- Custom Company Logo Class --- */
 .companylogo{
   @extend .padding-box;
+}
+
+/* --- during load have background red -- */
+body {
+  background: $epic-red;
+}
+
+section {
+  background: #fff;
 }
