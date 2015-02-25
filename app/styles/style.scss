@@ -252,3 +252,12 @@ form {
 .companylogo{
   @extend .padding-box;
 }
+
+/* --- during load have background red -- */
+body {
+  background: $epic-red;
+}
+
+section {
+  background: #fff;
+}
