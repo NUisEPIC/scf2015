@@ -318,13 +318,19 @@
             <label>Class Year</label>
             <div class="radio-group">
               <input type="radio" name="year" value="Freshman" ng-model="registration.year">
+              <label>Freshman</label>
               <input type="radio" name="year" value="Sophomore" ng-model="registration.year">
+              <label>Sophomore</label>
               <input type="radio" name="year" value="Junior" ng-model="registration.year">
+              <label>Junior</label>
             </div>
             <div class="radio-group">
               <input type="radio" name="year" value="Senior" ng-model="registration.year">
+              <label>Senior</label>
               <input type="radio" name="year" value="Graduate Student" ng-model="registration.year">
+              <label>Graduate Student</label>
               <input type="radio" name="year" value="Other" ng-model="registration.year">
+              <label>Other</label>
             </div>
             <input type="text" name="other" placeholder="Please Elaborate..." class="form-control" ng-model="registration.yearOtherExplanation" ng-show="registration.year == 'Other'">
           </div>

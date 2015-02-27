@@ -81,7 +81,7 @@ form {
     }
 
     &.year {
-      label {
+      label:first-child {
         margin: 0 auto;
         margin-left: 16%;
         text-align: left;
@@ -120,14 +120,6 @@ form {
     float: left;
     &:nth-child(2) {
       margin-left: 18%;
-    }
-    input[type="radio"]::after {
-      content: attr(value);
-      font-size: inherit;
-      display: block;
-      width: 185px;
-      padding-left: 20px;
-      margin-top: -5px;
     }
   }
 
@@ -174,9 +166,9 @@ form {
     height: 15px;
     margin-top: 10px;
     float: left;
-    clear: both;
     font-size: 16px;
     font-family: inherit;
+    clear: left;
   }
 
   input[type="checkbox"] {
@@ -184,14 +176,21 @@ form {
     height: 15px;
     clear: left;
     margin: 10px 0;
+  }
+  input[type="checkbox"], input[type="radio"] {
     &+label {
-      width: 220px;
+      max-width: 220px;
       padding-left: 15px;
       margin-top: 5px;
       font-size: 16px;
       font-weight: normal;
       float: left;
+      clear: right;
     }
+  }
+
+  input[type="radio"]+label {
+    max-width: 210px;
   }
 
   input[type="text"] {
