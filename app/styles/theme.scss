@@ -484,9 +484,11 @@ hr {
 --- FAQ
 ============================ */
 .faq-questions{
+    text-align: left;
   h3, h4{
     margin-bottom: 10px;
     text-transform: none;
+    font-size: 1.4em;
     font-family: 'Lato',sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
@@ -494,6 +496,8 @@ hr {
   }
   p{
     line-height: normal;
+    font-size: 1.2em;
+    font-weight: 300;
   }
 }
 
