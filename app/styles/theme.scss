@@ -464,10 +464,11 @@ hr {
 }
 
 #companies .img-vertical-align{
-  max-height: 150px;
+  max-height: 125px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  margin: auto;
 }
 
 /* ===========================

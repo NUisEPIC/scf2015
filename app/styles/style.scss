@@ -1,8 +1,9 @@
 $epic-red: #9C3042;
-
-a,.tp-caption a.btn:hover {
+a,
+.tp-caption a.btn:hover {
   color: $epic-red;
 }
+
 .top-nav-collapse {
   background: $epic-red;
 }
@@ -34,23 +35,20 @@ footer {
   border-color: $epic-red;
 }
 
-.color-maroon{
+.color-maroon {
   color: $epic-red;
 }
 
 form {
   font-size: 20px;
-
   .input-group {
     width: 80%;
     margin: 0 auto;
     text-align: left;
     margin-bottom: 20px;
-
     input {
       @extend .form-control;
     }
-
     &.name {
       input[type="text"] {
         width: 49%;
@@ -60,14 +58,12 @@ form {
         }
       }
     }
-
     &.gender .btn-group {
       width: 100%;
       .btn {
         width: 50%;
       }
     }
-
     &.school {
       label {
         width: 80px;
@@ -79,7 +75,6 @@ form {
         width: calc(100% - 105px);
       }
     }
-
     &.year {
       label:first-child {
         margin: 0 auto;
@@ -91,8 +86,8 @@ form {
         margin-top: 25px;
       }
     }
-
-    &.seeking, &.international {
+    &.seeking,
+    &.international {
       label:first-child {
         width: 100%;
         margin-left: 16%;
@@ -104,7 +99,6 @@ form {
         margin-left: 18%;
       }
     }
-
     &.resume {
       input[type="text"] {
         text-overflow: ellipsis;
@@ -112,7 +106,6 @@ form {
       }
     }
   }
-
   .radio-group {
     display: block;
     width: 40%;
@@ -122,44 +115,39 @@ form {
       margin-left: 18%;
     }
   }
-
-  @media all and (max-width:800px) {
+  @media all and (max-width: 800px) {
     .radio-group, .school {
       &:nth-child(2) {
         margin-left: 15%;
       }
     }
   }
-
-  @media all and (max-width:600px) {
+  @media all and (max-width: 600px) {
     .radio-group, .school {
       width: 80% !important;
       margin-left: 20% !important;
     }
-
     .school {
       margin-left: 10% !important;
     }
-
-    .year, .seeking, .international {
+    .year,
+    .seeking,
+    .international {
       label:first-child {
         margin-left: 4% !important;
       }
     }
   }
-
-  @media all and (max-width:500px) {
+  @media all and (max-width: 500px) {
     .seeking, .international {
       input[type="checkbox"] {
         margin-left: 8% !important;
       }
     }
-
     .radio-group {
       margin-left: 8% !important;
     }
   }
-
   input[type="radio"] {
     margin-right: 15px;
     width: 15px;
@@ -170,14 +158,14 @@ form {
     font-family: inherit;
     clear: left;
   }
-
   input[type="checkbox"] {
     width: 15px;
     height: 15px;
     clear: left;
     margin: 10px 0;
   }
-  input[type="checkbox"], input[type="radio"] {
+  input[type="checkbox"],
+  input[type="radio"] {
     &+label {
       max-width: 220px;
       padding-left: 15px;
@@ -188,24 +176,22 @@ form {
       clear: right;
     }
   }
-
   input[type="radio"]+label {
     max-width: 210px;
   }
-
   input[type="text"] {
     font-size: inherit;
     float: left;
     text-align: center;
   }
 }
-
 /* --------- */
+
 .padding-box {
   padding: 25px;
 }
 
-.vertical-center{
+.vertical-center {
   //  position: relative;
   //  top: 50%;
   //  transform: translateY(-50%);
@@ -213,13 +199,14 @@ form {
   vertical-align: middle;
 }
 
-.table-vertical-center{
+.table-vertical-center {
   display: table;
   width: 100%;
 }
-
 /* --- Custom Column Widths --- */
-.col-1-5{ //used for 6 logos - 3 on each side
+
+.col-1-5 {
+  //used for 6 logos - 3 on each side
   position: relative;
   padding-left: 15px;
   padding-right: 15px;
@@ -227,36 +214,45 @@ form {
   width: 15.27777777777778%;
 }
 
-.col-8-logos{
+.col-8-logos {
   position: relative;
   padding-left: 5px;
   padding-right: 5px;
   float: left;
-  width: 11.4583333333333333333%;
+  width: 11.4%;
 }
 
 //used for offsetting three company logos
 @media (min-width: 992px) {
-  .col-md-offset-1-5{
+  .col-md-offset-1-5 {
     margin-left: 12.5%;
   }
+  .col-md-offset-2 {
+    margin-left: 16.66666666667%;
+  }
+  .col-md-offset-3 {
+    margin-left: 25%;
+  }
+  .col-md-offset-4-5 {
+    margin-left: 37.5%;
+  }
 }
-
-.col-md-offset-2{
-  margin-left: 16.66666666667%;
-}
-
-
 /* --- Custom Company Logo Class --- */
-.companylogo{
+.companylogo {
   @extend .padding-box;
+  height: 160px;
 }
-
 /* --- during load have background red -- */
+
 body {
   background: $epic-red;
 }
 
 section {
   background: #fff;
+}
+
+a{
+//  margin: 0;
+  padding: 0;
 }
