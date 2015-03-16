@@ -222,8 +222,10 @@ form {
   width: 11.4%;
 }
 
-//used for offsetting three company logos
+//used for offsetting company logos
 @media (min-width: 992px) {
+  
+  //row of three logos
   .col-md-offset-1-5 {
     margin-left: 12.5%;
   }
