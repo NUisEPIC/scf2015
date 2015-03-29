@@ -190,19 +190,6 @@ form {
 .padding-box {
   padding: 25px;
 }
-
-.vertical-center {
-  //  position: relative;
-  //  top: 50%;
-  //  transform: translateY(-50%);
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.table-vertical-center {
-  display: table;
-  width: 100%;
-}
 /* --- Custom Column Widths --- */
 
 .col-1-5 {
@@ -257,4 +244,9 @@ section {
 a{
 //  margin: 0;
   padding: 0;
+}
+
+
+.hashtag{
+  padding-top: 50px;
 }
